@@ -9,10 +9,6 @@ entity multiplex4_1 is
     	input2 :  in std_logic_vector(7 downto 0);
     	input3 :  in std_logic_vector(7 downto 0);
 		en     :  in std_logic_vector(3 downto 0);
-    	--en_0   :  in std_logic;
-    	--en_1   :  in std_logic;
-    	--en_2   :  in std_logic;
-    	--en_3   :  in std_logic;
     	output :  out std_logic_vector(7 downto 0)
 		);
 end multiplex4_1;

@@ -40,14 +40,21 @@ architecture structural of cache_bit is
          input : in std_logic;
          output:out std_logic);
   end component;
+  
+  component or2
+	port (
+	input1 : in std_logic;
+	input2 : in std_logic;
+	output : out std_logic);
+  end component;
 
   for and2_0 : and2 use entity work.and2(structural);
   for tx_0 : tx use entity work.tx(structural);
   for Dlatch_0 : Dlatch use entity work.Dlatch(structural);
   for inv_0, inv_1 : inv use entity work.inv(structural);
+  for or2_0 : or2 use entity work.or2(structural);
 
-
-  signal Reset_bar, Read_en_bar, mux_d : std_logic;
+  signal Reset_bar, Read_en_bar, mux_d, wen: std_logic;
 
   signal q_temp, q_temp_bar : std_logic;
 
@@ -56,9 +63,9 @@ architecture structural of cache_bit is
     inv_0 : inv port map(Reset, Reset_bar);
     inv_1 : inv port map(Read_en, Read_en_bar);
     and2_0 : and2 port map(Reset_bar, Write_data, mux_d); --sets the value to 0
-  
-
-    Dlatch_0 : Dlatch port map(mux_d, Write_en, q_temp, q_temp_bar);
+	or2_0 : or2 port map(Write_en, Reset, wen);
+	
+    Dlatch_0 : Dlatch port map(mux_d, wen, q_temp, q_temp_bar);
     tx_0  : tx port map(Read_en, Read_en_bar, q_temp, Read_data);
 
 end structural;                          
