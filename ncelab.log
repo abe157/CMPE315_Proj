@@ -1,0 +1,35 @@
+ncelab: 15.20-s035: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncelab	15.20-s035: Started on Nov 17, 2017 at 13:39:47 EST
+ncelab
+    -messages
+    -access rwc
+    -cdslib ./cds.lib
+    -hdlvar ./hdl.var
+    chip_test
+
+ncelab: *W,DLWNEW: Intermediate file architecture VHDL.CHIP:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.CHIP_TEST:TEST (AST)
+		actual:   Fri Nov 17 13:39:44 2017
+		expected: Wed Nov 15 14:16:36 2017.
+ncelab: *W,DLWNEW: Intermediate file entity VHDL.CHIP (AST)
+	is newer than expected by architecture VHDL.CHIP_TEST:TEST (AST)
+		actual:   Fri Nov 17 13:39:44 2017
+		expected: Wed Nov 15 14:16:36 2017.
+ncelab: *W,ARCMRA: Elaborating the VHDL.CHIP_TEST:TEST, MRA (most recently analyzed) architecture.
+	Elaborating the design hierarchy:
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.CHIP:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.CHIP_TEST:TEST (AST)
+		actual:   Fri Nov 17 13:39:44 2017
+		expected: Wed Nov 15 14:16:36 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.CHIP (AST)
+	is newer than expected by architecture VHDL.CHIP_TEST:TEST (AST)
+		actual:   Fri Nov 17 13:39:44 2017
+		expected: Wed Nov 15 14:16:36 2017.
+	Building instance specific data structures.
+	Design hierarchy summary:
+		      Instances  Unique
+		Components:   3       2
+		Processes:    8       8
+		Signals:     14      14
+	Writing initial simulation snapshot: VHDL.CHIP_TEST:TEST
+TOOL:	ncelab	15.20-s035: Exiting on Nov 17, 2017 at 13:39:47 EST  (total: 00:00:00)

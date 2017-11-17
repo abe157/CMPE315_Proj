@@ -127,9 +127,9 @@ begin
 	block_6 : cache_block port map(Reset, Write_data, Ca(7 downto 5), Valid_data, byte_en, block_en(6),   WE,   RE, Read_Tag_Hit_Temp(6)(0), Read_Tag_Hit_Temp(6)(3 downto 1), Read_Data_Temp(6));
 	block_7 : cache_block port map(Reset, Write_data, Ca(7 downto 5), Valid_data, byte_en, block_en(7),   WE,   RE, Read_Tag_Hit_Temp(7)(0), Read_Tag_Hit_Temp(7)(3 downto 1), Read_Data_Temp(7));
 	
-	multiplex8_1_0 : multiplex8_1 port map(Read_Data_Temp(0), Read_Data_Temp(0), Read_Data_Temp(0), Read_Data_Temp(0), Read_Data_Temp(0), Read_Data_Temp(0), Read_Data_Temp(0), Read_Data_Temp(0), block_en, Output);
+	multiplex8_1_0 : multiplex8_1 port map(Read_Data_Temp(0), Read_Data_Temp(1), Read_Data_Temp(2), Read_Data_Temp(3), Read_Data_Temp(4), Read_Data_Temp(5), Read_Data_Temp(6), Read_Data_Temp(7), block_en, Output);
 
-	hit_multiplex4_1_0 : hit_multiplex4_1 port map( Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(0), block_en, Hit_Tag_Out  );
+	hit_multiplex4_1_0 : hit_multiplex4_1 port map( Read_Tag_Hit_Temp(0), Read_Tag_Hit_Temp(1), Read_Tag_Hit_Temp(2), Read_Tag_Hit_Temp(3), Read_Tag_Hit_Temp(4), Read_Tag_Hit_Temp(5), Read_Tag_Hit_Temp(6), Read_Tag_Hit_Temp(7), block_en, Hit_Tag_Out  );
 	
 	hit_miss_0 : hit_miss port map(Ca(7 downto 5), Hit_Tag_Out(3 downto 1), Hit_Tag_Out(0),  Hit_Miss_Signal);
 	

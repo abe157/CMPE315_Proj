@@ -1,0 +1,17 @@
+ncvhdl: 15.20-s035: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncvhdl	15.20-s035: Started on Nov 17, 2017 at 13:39:45 EST
+ncvhdl
+    -messages
+    -linedebug
+    -cdslib ./cds.lib
+    -hdlvar ./hdl.var
+    -smartorder
+    Block_Decoder_test.vhd
+
+Block_Decoder_test.vhd:
+	errors: 0, warnings: 0
+VHDL.BLOCK_DECODER_TEST (entity):
+	streams: 1, words: 38
+VHDL.BLOCK_DECODER_TEST:TEST (architecture):
+	streams: 2, words: 2258
+TOOL:	ncvhdl	15.20-s035: Exiting on Nov 17, 2017 at 13:39:45 EST  (total: 00:00:00)
