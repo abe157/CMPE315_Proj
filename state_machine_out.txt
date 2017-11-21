@@ -8,16 +8,16 @@
  Busy: U State: 10UUUUUU
 
  CLK: 0 START: 0 RESET: 1
- Busy: U State: 10U00001
+ Busy: 1 State: 10U00001
 
  CLK: 1 START: 0 RESET: 1
- Busy: U State: 10U00001
+ Busy: 1 State: 10U00001
 
  CLK: 0 START: 0 RESET: 1
- Busy: U State: 10U00001
+ Busy: 1 State: 10U00001
 
  CLK: 1 START: 1 RESET: 0
- Busy: 1 State: 00U00100
+ Busy: 1 State: 11U00001
 
  CLK: 0 START: 1 RESET: 0
  Busy: 1 State: 00U00100

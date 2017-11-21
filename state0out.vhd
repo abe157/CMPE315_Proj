@@ -30,8 +30,8 @@ begin
 		REN <= '0';
 		WEN <= '0';
 		Valid_Data <= '0';
-		Cache_Reset<= '0';
-		Busy <= '1';
+		Cache_Reset<= '1';
+		Busy <= '0';
 	end if; 
  end process output;    
 
