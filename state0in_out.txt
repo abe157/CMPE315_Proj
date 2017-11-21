@@ -1,0 +1,15 @@
+ State Enable: 1 Reset: 0 Start: 0
+ Reset State: 0 Next State: 1
+
+	 State Enable: 1 Reset: 1 Start: 0
+ Reset State: 1 Next State: 0
+
+	 State Enable: 1 Reset: 1 Start: 0
+ Reset State: 1 Next State: 0
+
+ State Enable: 1 Reset: 0 Start: 1
+ Reset State: 0 Next State: 1
+
+ State Enable: 1 Reset: 0 Start: 0
+ Reset State: 0 Next State: 1
+

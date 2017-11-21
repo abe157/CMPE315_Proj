@@ -1,15 +1,18 @@
 #Makefile for compiling vhdl code
 
-PARTS = or3.vhd or4.vhd and2.vhd and3.vhd or8.vhd xor2.vhd inv.vhd nand2.vhd or2.vhd mux.vhd mux8.vhd output_enable.vhd Dlatch.vhd tx.vhd reg8.vhd 
+PARTS = or3.vhd or4.vhd and2.vhd and3.vhd or8.vhd xor2.vhd inv.vhd nand2.vhd or2.vhd mux.vhd mux8.vhd output_enable.vhd Dlatch.vhd latch.vhd tx.vhd reg8.vhd 
 PARTS += hit_miss.vhd cache_bit.vhd cache_byte.vhd valid_tag.vhd multiplex4_1.vhd Block_Decoder.vhd Byte_Decoder.vhd cache_block.vhd 
-PARTS += multiplex8_1.vhd hit_multiplex4_1.vhd chip.vhd cache.vhd
-
+PARTS += multiplex8_1.vhd hit_multiplex4_1.vhd shift_reg.vhd shift_reg20.vhd cache.vhd 
 #states code 
-#PARTS += state0.vhd
+PARTS += state0in.vhd state0out.vhd state_machine.vhd
+
+#Final part to be complied last
+PARTS +=  chip.vhd
+
 #chip test is already included below
 #cache_block_test
 TEST_NAME = hit_miss_test Dlatch_test cache_bit_test cache_byte_test valid_tag_test multiplex4_1_test cache_block_test Byte_Decoder_test
-TEST_NAME += Block_Decoder_test
+TEST_NAME += Block_Decoder_test shift_reg20_test
 
 #states tests 
 #TEST_NAME += state0_test
@@ -36,10 +39,15 @@ sim:
 	done
 	run_ncsim.bash -input chip_test_run.ncsim -messages -cdslib ./cds.lib -hdlvar ./hdl.var  chip_test
 
+chip_test:
+	run_ncvhdl.bash -messages -linedebug -cdslib ./cds.lib -hdlvar ./hdl.var -smartorder chip_test.vhd;
+	run_ncelab.bash -messages -access rwc -cdslib ./cds.lib -hdlvar ./hdl.var chip_test;
+	run_ncsim.bash -input chip_test_run.ncsim -messages -cdslib ./cds.lib -hdlvar ./hdl.var  chip_test
+
 sim2:
 	run_gui_sim.bash -gui chip_test
 
-testing:
+test:
 	@read -p "What test would you like to run?: " temp_test; \
 	run_ncvhdl.bash -messages -linedebug -cdslib ./cds.lib -hdlvar ./hdl.var -smartorder $$temp_test\.vhd; \
 	run_ncelab.bash -messages -access rwc -cdslib ./cds.lib -hdlvar ./hdl.var $$temp_test; \

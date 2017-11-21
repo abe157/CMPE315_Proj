@@ -1,0 +1,27 @@
+ Reset: 0 Write Endable: 0 Read Enable: 0 Write Tag Data: 111 Write Valid Data: 0
+ Read Valid Data: U Read Tag Data: UUU
+
+ Reset: 0 Write Endable: 1 Read Enable: 0 Write Tag Data: 111 Write Valid Data: 0
+ Read Valid Data: 0 Read Tag Data: 111
+
+ Reset: 0 Write Endable: 0 Read Enable: 0 Write Tag Data: 111 Write Valid Data: 0
+ Read Valid Data: 0 Read Tag Data: 111
+
+ Reset: 0 Write Endable: 0 Read Enable: 1 Write Tag Data: 101 Write Valid Data: 1
+ Read Valid Data: 0 Read Tag Data: 111
+
+ Reset: 0 Write Endable: 1 Read Enable: 1 Write Tag Data: 101 Write Valid Data: 1
+ Read Valid Data: 1 Read Tag Data: 101
+
+ Reset: 1 Write Endable: 0 Read Enable: 0 Write Tag Data: 100 Write Valid Data: 1
+ Read Valid Data: 0 Read Tag Data: 000
+
+ Reset: 1 Write Endable: 0 Read Enable: 1 Write Tag Data: 100 Write Valid Data: 1
+ Read Valid Data: 0 Read Tag Data: 000
+
+ Reset: 1 Write Endable: 1 Read Enable: 1 Write Tag Data: 100 Write Valid Data: 1
+ Read Valid Data: 0 Read Tag Data: 000
+
+ Reset: 0 Write Endable: 0 Read Enable: 1 Write Tag Data: 100 Write Valid Data: 1
+ Read Valid Data: 0 Read Tag Data: 000
+

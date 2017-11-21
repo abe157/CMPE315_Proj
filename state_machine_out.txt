@@ -1,0 +1,36 @@
+ CLK: 1 START: 0 RESET: 0
+ Busy: U State: 00UUUUUU
+
+ CLK: 0 START: 0 RESET: 0
+ Busy: U State: 00UUUUUU
+
+ CLK: 1 START: 0 RESET: 1
+ Busy: U State: 10UUUUUU
+
+ CLK: 0 START: 0 RESET: 1
+ Busy: U State: 10U00001
+
+ CLK: 1 START: 0 RESET: 1
+ Busy: U State: 10U00001
+
+ CLK: 0 START: 0 RESET: 1
+ Busy: U State: 10U00001
+
+ CLK: 1 START: 1 RESET: 0
+ Busy: 1 State: 00U00100
+
+ CLK: 0 START: 1 RESET: 0
+ Busy: 1 State: 00U00100
+
+ CLK: 1 START: 0 RESET: 0
+ Busy: 1 State: 00U00100
+
+ CLK: 0 START: 0 RESET: 0
+ Busy: 1 State: 00U00100
+
+ CLK: 1 START: 0 RESET: 0
+ Busy: 1 State: 00U00100
+
+ CLK: 0 START: 0 RESET: 0
+ Busy: 1 State: 00U00100
+

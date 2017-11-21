@@ -1,0 +1,21 @@
+ Reset: 0 Write Data: 1 Write Endable: 0 Read Enable: 0
+ Read Data: Z
+
+ Reset: 0 Write Data: 1 Write Endable: 1 Read Enable: 0
+ Read Data: Z
+
+ Reset: 0 Write Data: 1 Write Endable: 0 Read Enable: 0
+ Read Data: Z
+
+ Reset: 0 Write Data: 1 Write Endable: 0 Read Enable: 1
+ Read Data: 1
+
+ Reset: 0 Write Data: 0 Write Endable: 1 Read Enable: 1
+ Read Data: 0
+
+ Reset: 1 Write Data: 0 Write Endable: 0 Read Enable: 0
+ Read Data: Z
+
+ Reset: 0 Write Data: 0 Write Endable: 0 Read Enable: 1
+ Read Data: 0
+
