@@ -101,7 +101,8 @@ end component;
 	for Rw_reg : reg use entity work.reg(structural);
 	for Ca_reg, Cd_reg : reg8 use entity work.reg8(structural);
 	for cash : cache use entity work.cache(structural);
-	for out_mem, out_cpu : output_enable use entity work.output_enable(structural);
+	for  out_cpu : output_enable use entity work.output_enable(structural);
+	for  out_mem : output_enable use entity work.output_enable(structural);
 	for mux_1 : mux8 use entity work.mux8(structural);
 	
 	signal zero : std_logic := '0';
@@ -132,11 +133,15 @@ begin  -- structural
 	
 
   --CPU & data output enable
-  out_mem	:	output_enable port map(temp_ca, temp_ma_en, mem_add);  
-  --out_mem	:	output_enable port map(temp_ma, one, mem_add); 
+	out_mem	:	output_enable port map(temp_ca, temp_ma_en, mem_add);  
+	-- mem_add(1 downto 0) <= temp_byte;
+	-- mem_add(7 downto 5) <= data_in(7 downto 5);
+	-- mem_add(3) <= wen;
+
+
+	out_cpu	:	output_enable port map(temp_output, temp_cd_en, cpu_data);
+	mem_en <= temp_ma_en;
   
-  out_cpu	:	output_enable port map(temp_output, temp_cd_en, cpu_data);
-  mem_en <= temp_ma_en;
   
   -- mem_add(7 downto 0) <= temp_ma(7 downto 0);
   

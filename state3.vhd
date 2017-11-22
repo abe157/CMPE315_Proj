@@ -53,7 +53,7 @@ begin
 	WEN <= zero;
 	Data_Sel <= state_en;
 	REN <= zero;
-	Valid_Data <= zero;
+	Valid_Data <= state_en; -- !!! return to zero
 	Busy <= temp(2);
 	Ca_En <= zero;
 	Reset_St <= temp(1);

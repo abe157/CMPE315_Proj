@@ -7,7 +7,8 @@ entity state2 is
 		state_en	: in std_logic;
 		rw			: in std_logic;
 		hit_miss	: in std_logic;
-
+		byte_offset	: in std_logic_vector(1 downto 0);
+		
 		Ma_En		: out std_logic;
 		Cd_En		: out std_logic;
 		Data_Sel 	: out std_logic;
@@ -16,7 +17,8 @@ entity state2 is
 		Valid_Data 	: out std_logic;
 		Busy 		: out std_logic;
 		Ca_En 		: out std_logic;
-		Reset_St	: out std_logic);
+		Reset_St	: out std_logic;
+		byte_out	: out std_logic_vector(1 downto 0));
 end state2;
 
 architecture structural of state2 is
@@ -57,10 +59,11 @@ component and3
 end component;
 
 for nand2_1, nand2_2, nand2_3, nand2_4	: nand2 use entity work.nand2(structural);
-for or2_1, or2_2, or2_3 : or2 use entity work.or2(structural);
-for and2_1, and2_2	: and2 use entity work.and2(structural);
+for or2_1, or2_2, or2_3, or2_4 : or2 use entity work.or2(structural);
+for and2_1, and2_2, and2_3, and2_4: and2 use entity work.and2(structural);
 
 signal temp	: std_logic_vector(8 downto 0);
+signal or_temp : std_logic;
 signal zero : std_logic := '0';
 signal one	: std_logic := '1';
 
@@ -78,12 +81,17 @@ begin
 	
 	Cd_En <= temp(4);
 	Ma_En <= temp(7);
-	WEN <= temp(8);
+	--!!!WEN <= temp(8);
+	WEN <= zero;
 	Data_Sel <= temp(6);
 	REN <= temp(4);
 	Valid_Data <= state_en;
 	Busy <= temp(2);
 	Ca_En <= zero;
 	Reset_St <= temp(4);
+	
+	or2_4	:	or2 port map(temp(4), temp(8), or_temp);
+	and2_3	:	and2 port map(or_temp, byte_offset(0), byte_out(0));
+	and2_4	:	and2 port map(or_temp, byte_offset(1), byte_out(1));
 	
 end structural;
