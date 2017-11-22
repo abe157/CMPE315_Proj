@@ -13,7 +13,8 @@ entity state0out is
 		WEN : out std_logic;
 		Valid_Data : out std_logic;
 		Cache_Reset : out std_logic;
-		Busy : out std_logic);
+		Busy : out std_logic;
+		Ca_En : out std_logic);
 end state0out;
 
 architecture structural of state0out is
@@ -30,8 +31,8 @@ begin
 		REN <= '0';
 		WEN <= '0';
 		Valid_Data <= '0';
-		Cache_Reset<= '1';
-		Busy <= '0';
+		Busy <= '1';
+		Ca_En <= '1';
 	end if; 
  end process output;    
 

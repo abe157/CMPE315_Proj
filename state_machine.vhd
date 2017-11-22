@@ -1,3 +1,101 @@
+library STD;
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity or20 is
+port (
+	input1 : in std_logic;
+	input2 : in std_logic;
+	input3 : in std_logic;
+	input4 : in std_logic;
+	input5 : in std_logic;
+	input6 : in std_logic;
+	input7 : in std_logic;
+	input8 : in std_logic;
+	input9 : in std_logic;
+	input10 : in std_logic;
+	input11 : in std_logic;
+	input12 : in std_logic;
+	input13 : in std_logic;
+	input14 : in std_logic;
+	input15 : in std_logic;
+	input16 : in std_logic;
+	input17 : in std_logic;
+	input18 : in std_logic;
+	input19 : in std_logic;
+	input20 : in std_logic;
+	
+	output : out std_logic);
+end or20;
+
+architecture structural of or20 is
+
+begin
+	output <= input1 or input2 or input3 or input4 or input5 or input6 or input7 or input8 or input9 or input10 or input11 or input12 or input13 or input14 or input15 or input16 or input17 or input18 or input19 or input20;
+end structural;
+
+library STD;
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity or21 is
+port (
+	input1 : in std_logic;
+	input2 : in std_logic;
+	input3 : in std_logic;
+	input4 : in std_logic;
+	input5 : in std_logic;
+	input6 : in std_logic;
+	input7 : in std_logic;
+	input8 : in std_logic;
+	input9 : in std_logic;
+	input10 : in std_logic;
+	input11 : in std_logic;
+	input12 : in std_logic;
+	input13 : in std_logic;
+	input14 : in std_logic;
+	input15 : in std_logic;
+	input16 : in std_logic;
+	input17 : in std_logic;
+	input18 : in std_logic;
+	input19 : in std_logic;
+	input20 : in std_logic;
+	input21 : in std_logic;
+	output : out std_logic);
+end or21;
+
+architecture structural of or21 is
+
+begin
+	output <= input1 or input2 or input3 or input4 or input5 or input6 or input7 or input8 or input9 or input10 or input11 or input12 or input13 or input14 or input15 or input16 or input17 or input18 or input19 or input20 or input21;
+end structural;
+
+
+
+library STD;
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity or12 is
+port (
+	input1 : in std_logic;
+	input2 : in std_logic;
+	input3 : in std_logic;
+	input4 : in std_logic;
+	input5 : in std_logic;
+	input6 : in std_logic;
+	input7 : in std_logic;
+	input8 : in std_logic;
+	input9 : in std_logic;
+	input10: in std_logic;
+	input11: in std_logic;
+	input12: in std_logic;
+	
+	output : out std_logic);
+end or12;
+
+architecture structural of or12 is
+
+begin
+	output <= input1 or input2 or input3 or input4 or input5 or input6 or input7 or input8 or input9 or input10 or input11 or input12;
+end structural;
 
 library STD;
 library IEEE;
@@ -5,7 +103,6 @@ use IEEE.std_logic_1164.all;
 
 entity state_machine is
   port (
-
 		clk : in std_logic;
 		Read_Write : in std_logic;
 		Start : in std_logic;
@@ -16,14 +113,14 @@ entity state_machine is
 		Ma : out std_logic_vector(7 downto 0);
 		Ma_En : out std_logic;
 		Cd_En : out std_logic;
+		Ca_En : out std_logic;
 		Data_Sel : out std_logic;
 		REN : out std_logic;
 		WEN : out std_logic;
 		Valid_Data : out std_logic;
-		Cache_Reset : out std_logic;
-		Busy : out std_logic);
+		Busy : out std_logic;
+		byte_out  : out std_logic_vector(1 downto 0));
 end state_machine;
-
 
 architecture structural of state_machine is
 
@@ -33,74 +130,263 @@ architecture structural of state_machine is
 		output   : out std_logic);
 	end component;
 
-	component or19
-		port (
-			input1 : in std_logic;
-			input2 : in std_logic;
-			input3 : in std_logic;
-			input4 : in std_logic;
-			input5 : in std_logic;
-			input6 : in std_logic;
-			input7 : in std_logic;
-			input8 : in std_logic;
-			input9 : in std_logic;
-			input10 : in std_logic;
-			input11 : in std_logic;
-			input12 : in std_logic;
-			input13 : in std_logic;
-			input14 : in std_logic;
-			input15 : in std_logic;
-			input16 : in std_logic;
-			input17 : in std_logic;
-			input18 : in std_logic;
-			input19 : in std_logic;
-			output : out std_logic);
-	end component;
-	
 	component shift_reg20
 		port (
 			reset	:  in std_logic;
 			clk		:  in std_logic;
-			q		:  out std_logic_vector(18 downto 0);
-			qbar	:  out std_logic_vector(18 downto 0));
+			q		:  out std_logic_vector(19 downto 0);
+			qbar	:  out std_logic_vector(19 downto 0));
 	end component;
 	
-	component state0out
-	port (
-		state_en	: in std_logic;
-		
-		Ma_En : out std_logic;
-		Cd_En : out std_logic;
-		Data_Sel : out std_logic;
-		REN : out std_logic;
-		WEN : out std_logic;
-		Valid_Data : out std_logic;
-		Cache_Reset : out std_logic;
-		Busy : out std_logic);
-	end component;
-	
-	component state0in
+	component state0
 		port (
 			state_en	: in std_logic;
 			reset		: in std_logic;
 			start		: in std_logic;
 			
+			
 			Reset_st	: out std_logic;
-			Next_st		: out std_logic);
+			Next_st		: out std_logic;
+			Ma_En : out std_logic;
+			Cd_En : out std_logic;
+			Data_Sel : out std_logic;
+			REN : out std_logic;
+			WEN : out std_logic;
+			Valid_Data : out std_logic;
+			Busy : out std_logic;
+			Ca_En 		: out std_logic);
 	end component;
 	
-	component state1out
-	port (
-		state_en	: in std_logic;
+	component state1
+		port (
+			state_en	: in std_logic;
+			rw			: in std_logic;
+			hit_miss	: in std_logic;
+			byte_offset	: in std_logic_vector(1 downto 0);
+			
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			byte_out	: out std_logic_vector(1 downto 0));
+		end component;
+
+	component state2
+		port (
+			state_en	: in std_logic;
+			rw			: in std_logic;
+			hit_miss	: in std_logic;
+			byte_offset	: in std_logic_vector(1 downto 0);
+			
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out	: out std_logic_vector(1 downto 0));
+		end component;
+
+	component state3
+		port (
+			state_en	: in std_logic;
+			rw			: in std_logic;
+			hit_miss	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic);
+		end component;
+
+	component wait_state
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic);
+		end component;
 		
-		Ma_En : out std_logic;
-		Cd_En : out std_logic;
-		Data_Sel : out std_logic;
-		REN : out std_logic;
-		WEN : out std_logic;
-		Valid_Data : out std_logic;
-		Cache_Reset : out std_logic;
-		Busy : out std_logic);
+	component state10
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+		
+	component state11
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+	
+	component state12
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+	
+	component state13
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+	
+	component state14
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+	
+	component state15
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+	
+	component state16
+		port (
+			state_en	: in std_logic;
+
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;	
+	
+	component state17
+		port (
+			state_en	: in std_logic;
+			byte_offset	: in std_logic_vector(1 downto 0);
+			
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;
+
+	component state18
+		port (
+			state_en	: in std_logic;
+			byte_offset	: in std_logic_vector(1 downto 0);
+			
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
+	end component;
+	
+	component state19
+		port (
+			state_en	: in std_logic;
+			byte_offset	: in std_logic_vector(1 downto 0);
+			
+			Ma_En		: out std_logic;
+			Cd_En		: out std_logic;
+			Data_Sel 	: out std_logic;
+			REN 		: out std_logic;
+			WEN 		: out std_logic;
+			Valid_Data 	: out std_logic;
+			Busy 		: out std_logic;
+			Ca_En 		: out std_logic;
+			Reset_St	: out std_logic;
+			byte_out  	: out std_logic_vector(1 downto 0));
 	end component;
 	
 	component or3 
@@ -125,63 +411,167 @@ architecture structural of state_machine is
 		output   : out std_logic);
 	end component;
 	
-	for st0in : state0in use entity work.state0in(structural);
+	component or20
+	port (
+		input1 : in std_logic;
+		input2 : in std_logic;
+		input3 : in std_logic;
+		input4 : in std_logic;
+		input5 : in std_logic;
+		input6 : in std_logic;
+		input7 : in std_logic;
+		input8 : in std_logic;
+		input9 : in std_logic;
+		input10 : in std_logic;
+		input11 : in std_logic;
+		input12 : in std_logic;
+		input13 : in std_logic;
+		input14 : in std_logic;
+		input15 : in std_logic;
+		input16 : in std_logic;
+		input17 : in std_logic;
+		input18 : in std_logic;
+		input19 : in std_logic;
+		input20 : in std_logic;
+	
+		output : out std_logic);
+	end component;
+	
+	component or21
+		port (
+			input1 : in std_logic;
+			input2 : in std_logic;
+			input3 : in std_logic;
+			input4 : in std_logic;
+			input5 : in std_logic;
+			input6 : in std_logic;
+			input7 : in std_logic;
+			input8 : in std_logic;
+			input9 : in std_logic;
+			input10 : in std_logic;
+			input11 : in std_logic;
+			input12 : in std_logic;
+			input13 : in std_logic;
+			input14 : in std_logic;
+			input15 : in std_logic;
+			input16 : in std_logic;
+			input17 : in std_logic;
+			input18 : in std_logic;
+			input19 : in std_logic;
+			input20 : in std_logic;
+			input21 : in std_logic;
+			output : out std_logic);
+	end component;
+	
+	component or12 
+		port (
+			input1 : in std_logic;
+			input2 : in std_logic;
+			input3 : in std_logic;
+			input4 : in std_logic;
+			input5 : in std_logic;
+			input6 : in std_logic;
+			input7 : in std_logic;
+			input8 : in std_logic;
+			input9 : in std_logic;
+			input10: in std_logic;
+			input11: in std_logic;
+			input12: in std_logic;
+			
+			output : out std_logic);
+	end component;
+	
+	
+	for st0 : state0 use entity work.state0(structural);
+	for st1	: state1 use entity work.state1(structural);
+	for st2 : state2 use entity work.state2(structural);
+	for st3 : state3 use entity work.state3(structural);
+	for st4, st5, st6, st7, st8, st9 : wait_state use entity work.wait_state(structural);
+	for st10 : state10 use entity work.state10(structural);
+	for st11 : state11 use entity work.state11(structural);
+	for st12 : state12 use entity work.state12(structural);
+	for st13 : state13 use entity work.state13(structural);
+	for st14 : state14 use entity work.state14(structural);
+	for st15 : state15 use entity work.state15(structural);
+	for st16 : state16 use entity work.state16(structural);
+	for st17 : state17 use entity work.state17(structural);
+	for st18 : state18 use entity work.state18(structural);
+	for st19 : state19 use entity work.state19(structural);
 	for sr : shift_reg20 use entity work.shift_reg20(structural);
 	for inv1, inv2 : inv use entity work.inv(structural);
-	for or2_1, or2_2	:	or2 use entity work.or2(structural);
-	for or19_0, or19_1, or19_2, or19_3, or19_4, or19_5, or19_6, or19_7 :or19 use entity work.or19(structural);
-	--for or3_1	:	or3 use entity work.or3(structural);
 	for and2_1	:	and2 use entity work.and2(structural);
+	for or20_1, or20_2, or20_3, or20_4, or20_5, or20_6, or20_7, or20_8, or20_9 :	or20 use entity work.or20(structural);
+	for or12_1 : or12 use entity work.or12(structural);
+	for or21_1 : or21 use entity work.or21(structural);
 	
-	for st0out	:	state0out use entity work.state0out(structural);
-	for st1out	:	state1out use entity work.state1out(structural);
+	--for st0out : state0out use entity work.state0out(structural);
 	
-	signal state, nstate, ResetState, NextState  : std_logic_vector(18 downto 0);
-	signal maen, cden, datasel, readen, writeen, validData, cachereset, buzy : std_logic_vector(18 downto 0);
-	
+	signal state, nstate, ResetState, NextState  : std_logic_vector(19 downto 0);
 	signal one	:	std_logic := '1';
 	signal zero	:	std_logic := '0';
 	signal nreset, nclk, full_reset, temp_next, full_next : 	std_logic;
+
+	signal temp_ma_en, temp_cd_en, temp_ca_en,  temp_data_sel, temp_ren, temp_wen, temp_valid_data, temp_busy : std_logic_vector(19 downto 0);
+	signal byte_0, byte_1, byte_2, byte_3, byte_4, byte_5, byte_6, byte_7, byte_8, byte_9, byte_10, byte_11 : std_logic_vector(1 downto 0);
 	
 begin
 	
 	--Inverted Signals
 	inv1	:	inv port map(Reset, nreset);
 	inv2	:	inv port map(clk, nclk);
-	
-	--State Input Hanlders
-	st0in : state0in port map(state(0), Reset, Start, ResetState(0), NextState(0));
-	
+
+	--State handlers
+	st0 : state0 port map(state(0), Reset, Start, ResetState(0), NextState(0), temp_ma_en(0), temp_cd_en(0), temp_data_sel(0), temp_ren(0), temp_wen(0), temp_valid_data(0), temp_busy(0), temp_ca_en(0)); --000000000001
+	st1 : state1 port map(state(1), Read_Write, Hit_Miss, Ca(1 downto 0),temp_ma_en(1), temp_cd_en(1), temp_data_sel(1), temp_ren(1), temp_wen(1), temp_valid_data(1), temp_busy(1), temp_ca_en(1), byte_11);		
+	st2 : state2 port map(state(2), Read_Write, Hit_Miss, Ca(1 downto 0), temp_ma_en(2), temp_cd_en(2), temp_data_sel(2), temp_ren(2), temp_wen(2), temp_valid_data(2), temp_busy(2), temp_ca_en(2), ResetState(2), byte_10);		
+	st3 : state3 port map(state(3), Read_Write, Hit_Miss, temp_ma_en(3), temp_cd_en(3), temp_data_sel(3), temp_ren(3), temp_wen(3), temp_valid_data(3), temp_busy(3), temp_ca_en(3), ResetState(3));		
+	st4 : wait_state port map(state(4), temp_ma_en(4), temp_cd_en(4), temp_data_sel(4), temp_ren(4), temp_wen(4), temp_valid_data(4), temp_busy(4), temp_ca_en(4), ResetState(4));		
+	st5 : wait_state port map(state(5), temp_ma_en(5), temp_cd_en(5), temp_data_sel(5), temp_ren(5), temp_wen(5), temp_valid_data(5), temp_busy(5), temp_ca_en(5), ResetState(5));		
+	st6 : wait_state port map(state(6), temp_ma_en(6), temp_cd_en(6), temp_data_sel(6), temp_ren(6), temp_wen(6), temp_valid_data(6), temp_busy(6), temp_ca_en(6), ResetState(6));		
+	st7 : wait_state port map(state(7), temp_ma_en(7), temp_cd_en(7), temp_data_sel(7), temp_ren(7), temp_wen(7), temp_valid_data(7), temp_busy(7), temp_ca_en(7), ResetState(7));		
+	st8 : wait_state port map(state(8), temp_ma_en(8), temp_cd_en(8), temp_data_sel(8), temp_ren(8), temp_wen(8), temp_valid_data(8), temp_busy(8), temp_ca_en(8), ResetState(8));		
+	st9 : wait_state port map(state(9), temp_ma_en(9), temp_cd_en(9), temp_data_sel(9), temp_ren(9), temp_wen(9), temp_valid_data(9), temp_busy(9), temp_ca_en(9), ResetState(9));		
+	st10 : state10 port map(state(10), temp_ma_en(10), temp_cd_en(10), temp_data_sel(10), temp_ren(10), temp_wen(10), temp_valid_data(10), temp_busy(10), temp_ca_en(10), ResetState(10), byte_0);
+	st11 : state11 port map(state(11), temp_ma_en(11), temp_cd_en(11), temp_data_sel(11), temp_ren(11), temp_wen(11), temp_valid_data(11), temp_busy(11), temp_ca_en(11), ResetState(11), byte_1);
+	st12 : state12 port map(state(12), temp_ma_en(12), temp_cd_en(12), temp_data_sel(12), temp_ren(12), temp_wen(12), temp_valid_data(12), temp_busy(12), temp_ca_en(12), ResetState(12), byte_2);
+	st13 : state13 port map(state(13), temp_ma_en(13), temp_cd_en(13), temp_data_sel(13), temp_ren(13), temp_wen(13), temp_valid_data(13), temp_busy(13), temp_ca_en(13), ResetState(13), byte_3);
+	st14 : state14 port map(state(14), temp_ma_en(14), temp_cd_en(14), temp_data_sel(14), temp_ren(14), temp_wen(14), temp_valid_data(14), temp_busy(14), temp_ca_en(14), ResetState(14), byte_4);
+	st15 : state15 port map(state(15), temp_ma_en(15), temp_cd_en(15), temp_data_sel(15), temp_ren(15), temp_wen(15), temp_valid_data(15), temp_busy(15), temp_ca_en(15), ResetState(15), byte_5);
+	st16 : state16 port map(state(16), temp_ma_en(16), temp_cd_en(16), temp_data_sel(16), temp_ren(16), temp_wen(16), temp_valid_data(16), temp_busy(16), temp_ca_en(16), ResetState(16), byte_6);
+	st17 : state17 port map(state(17), Ca(1 downto 0), temp_ma_en(17), temp_cd_en(17), temp_data_sel(17), temp_ren(17), temp_wen(17), temp_valid_data(17), temp_busy(17), temp_ca_en(17), ResetState(17), byte_7);
+	st18 : state18 port map(state(18), Ca(1 downto 0), temp_ma_en(18), temp_cd_en(18), temp_data_sel(18), temp_ren(18), temp_wen(18), temp_valid_data(18), temp_busy(18), temp_ca_en(18), ResetState(18), byte_8);
+	st19 : state19 port map(state(19), Ca(1 downto 0), temp_ma_en(19), temp_cd_en(19), temp_data_sel(19), temp_ren(19), temp_wen(19), temp_valid_data(19), temp_busy(19), temp_ca_en(19), ResetState(19), byte_9);
+
 	--All states combined reset_state & next_state signal or20
-	or2_1	: or2 port map(Reset, ResetState(0), full_reset);
-	or2_2	: or2 port map(Reset, NextState(0), temp_next);
-	
+	or20_9	: or20 port map(Reset, ResetState(0), ResetState(2), ResetState(3), ResetState(4), ResetState(5), ResetState(6), ResetState(7), ResetState(8), ResetState(9), ResetState(10), ResetState(11), ResetState(12), ResetState(13), ResetState(14), ResetState(15), ResetState(16), ResetState(17), ResetState(18), ResetState(19), full_reset);
+	or21_1	: or21 port map(Reset, state(0), state(1), state(2), state(3), state(4), state(5), state(6), state(7), state(8), state(9), state(10), state(11), state(12), state(13), state(14), state(15), state(16), state(17), state(18), state(19), temp_next);
 	
 	--Combine the change state with the clk 
-	and2_1	: and2 port map(temp_next, nclk, full_next);
+	and2_1	: and2 port map(temp_next, clk, full_next);
 	
 	--Shift register that handless the increment of the states
 	sr : shift_reg20 port map(full_reset, full_next, state, nstate);
 		
-	--State output signal handelers
-	st0out : state0out port map(state(0), maen(0), cden(0), datasel(0), readen(0), writeen(0), validData(0), cachereset(0), buzy(0));
-	st1out : state1out port map(state(2), maen(1), cden(1), datasel(1), readen(1), writeen(1), validData(1), cachereset(1), buzy(1));
-	
-	--Handling the outputs to a single variable	-- "maen(1), maen(1), maen(1), maen(1),maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1), maen(1)"
-	or19_0  :  or19 port map(maen(0), maen(1), maen(2), maen(3),maen(4), maen(5), maen(6), maen(7), maen(8), maen(9), maen(10), maen(11), maen(12), maen(13), maen(14), maen(15), maen(16), maen(17), maen(18), Ma_En);
-	or19_1  :  or19 port map(cden(0), cden(1), cden(2), cden(3),cden(4), cden(5), cden(6), cden(7), cden(8), cden(9), cden(10), cden(11), cden(12), cden(13), cden(14), cden(15), cden(16), cden(17), cden(18), Cd_En);
-	or19_2  :  or19 port map(datasel(0), datasel(1), datasel(2), datasel(3),datasel(4), datasel(5), datasel(6), datasel(7), datasel(8), datasel(9), datasel(10), datasel(11), datasel(12), datasel(13), datasel(14), datasel(15), datasel(16), datasel(17), datasel(18), Data_Sel);
-	or19_3  :  or19 port map(readen(0), readen(1), readen(2), readen(3),readen(4), readen(5), readen(6), readen(7), readen(8), readen(9), readen(10), readen(11), readen(12), readen(13), readen(14), readen(15), readen(16), readen(17), readen(18), REN);
-	or19_4  :  or19 port map(writeen(0), writeen(1), writeen(2), writeen(3),writeen(4), writeen(5), writeen(6), writeen(7), writeen(8), writeen(9), writeen(10), writeen(11), writeen(12), writeen(13), writeen(14), writeen(15), writeen(16), writeen(17), writeen(18), WEN);
-	or19_5  :  or19 port map(validData(0), validData(1), validData(2), validData(3),validData(4), validData(5), validData(6), validData(7), validData(8), validData(9), validData(10), validData(11), validData(12), validData(13), validData(14), validData(15), validData(16), validData(17), validData(18), Valid_Data);
-	or19_6  :  or19 port map(cachereset(0), cachereset(1), cachereset(2), cachereset(3),cachereset(4), cachereset(5), cachereset(6), cachereset(7), cachereset(8), cachereset(9), cachereset(10), cachereset(11), cachereset(12), cachereset(13), cachereset(14), cachereset(15), cachereset(16), cachereset(17), cachereset(18), Cache_Reset);              
-	or19_7  :  or19 port map(buzy(0), buzy(1), buzy(2), buzy(3),buzy(4), buzy(5), buzy(6), buzy(7), buzy(8), buzy(9), buzy(10), buzy(11), buzy(12), buzy(13), buzy(14), buzy(15), buzy(16), buzy(17), buzy(18), Busy);
+	--State output signals combining
+
+	or20_1	: or20 port map(temp_ma_en(0), temp_ma_en(1), temp_ma_en(2), temp_ma_en(3), temp_ma_en(4), temp_ma_en(5), temp_ma_en(6), temp_ma_en(7), temp_ma_en(8), temp_ma_en(9), temp_ma_en(10), temp_ma_en(11), temp_ma_en(12), temp_ma_en(13), temp_ma_en(14), temp_ma_en(15), temp_ma_en(16), temp_ma_en(17), temp_ma_en(18), temp_ma_en(19), Ma_En);
+	or20_2	: or20 port map(temp_cd_en(0), temp_cd_en(1), temp_cd_en(2), temp_cd_en(3), temp_cd_en(4), temp_cd_en(5), temp_cd_en(6), temp_cd_en(7), temp_cd_en(8), temp_cd_en(9), temp_cd_en(10), temp_cd_en(11), temp_cd_en(12), temp_cd_en(13), temp_cd_en(14), temp_cd_en(15), temp_cd_en(16), temp_cd_en(17), temp_cd_en(18), temp_cd_en(19), Cd_En);
+	or20_3	: or20 port map(temp_ca_en(0), temp_ca_en(1), temp_ca_en(2), temp_ca_en(3), temp_ca_en(4), temp_ca_en(5), temp_ca_en(6), temp_ca_en(7), temp_ca_en(8), temp_ca_en(9), temp_ca_en(10), temp_ca_en(11), temp_ca_en(12), temp_ca_en(13), temp_ca_en(14), temp_ca_en(15), temp_ca_en(16), temp_ca_en(17), temp_ca_en(18), temp_ca_en(19), Ca_En);
+	or20_4	: or20 port map(temp_data_sel(0), temp_data_sel(1), temp_data_sel(2), temp_data_sel(3), temp_data_sel(4), temp_data_sel(5), temp_data_sel(6), temp_data_sel(7), temp_data_sel(8), temp_data_sel(9), temp_data_sel(10), temp_data_sel(11), temp_data_sel(12), temp_data_sel(13), temp_data_sel(14), temp_data_sel(15), temp_data_sel(16), temp_data_sel(17), temp_data_sel(18), temp_data_sel(19), Data_Sel);
+	or20_5	: or20 port map(temp_ren(0), temp_ren(1), temp_ren(2), temp_ren(3), temp_ren(4), temp_ren(5), temp_ren(6), temp_ren(7), temp_ren(8), temp_ren(9), temp_ren(10), temp_ren(11), temp_ren(12), temp_ren(13), temp_ren(14), temp_ren(15), temp_ren(16), temp_ren(17), temp_ren(18), temp_ren(19), REN);
+	or20_6	: or20 port map(temp_wen(0), temp_wen(1), temp_wen(2), temp_wen(3), temp_wen(4), temp_wen(5), temp_wen(6), temp_wen(7), temp_wen(8), temp_wen(9), temp_wen(10), temp_wen(11), temp_wen(12), temp_wen(13), temp_wen(14), temp_wen(15), temp_wen(16), temp_wen(17), temp_wen(18), temp_wen(19), WEN);
+	or20_7	: or20 port map(temp_valid_data(0), temp_valid_data(1), temp_valid_data(2), temp_valid_data(3), temp_valid_data(4), temp_valid_data(5), temp_valid_data(6), temp_valid_data(7), temp_valid_data(8), temp_valid_data(9), temp_valid_data(10), temp_valid_data(11), temp_valid_data(12), temp_valid_data(13), temp_valid_data(14), temp_valid_data(15), temp_valid_data(16), temp_valid_data(17), temp_valid_data(18), temp_valid_data(19), Valid_Data);
+	or20_8	: or20 port map(temp_busy(0), temp_busy(1), temp_busy(2), temp_busy(3), temp_busy(4), temp_busy(5), temp_busy(6), temp_busy(7), temp_busy(8), temp_busy(9), temp_busy(10), temp_busy(11), temp_busy(12), temp_busy(13), temp_busy(14), temp_busy(15), temp_busy(16), temp_busy(17), temp_busy(18), temp_busy(19), Busy);	
 	
 
+	--Ma(7 downto 0) <= state(7 downto 0);	
+	Ma <= Ca;
+
+	-- Byte output
+	or12_1	: or12 port map( byte_0(0), byte_1(0), byte_2(0), byte_3(0), byte_4(0), byte_5(0), byte_6(0), byte_7(0), byte_8(0), byte_9(0), byte_10(0), byte_11(0), byte_out(0));
+	or12_2	: or12 port map( byte_0(1), byte_1(1), byte_2(1), byte_3(1), byte_4(1), byte_5(1), byte_6(1), byte_7(1), byte_8(1), byte_9(1), byte_10(1), byte_11(1), byte_out(1));
 	
-	Ma(4 downto 0) <= state(4 downto 0);
-	Ma(7) <= temp_next;
-	Ma(6) <= NextState(0);
+	-- byte_out <= Ca(1 downto 0);
 	--Ca <= nstate(7 downto 0);
 	
 

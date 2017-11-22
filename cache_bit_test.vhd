@@ -57,7 +57,7 @@ begin
 		write(buf, reset);
 		write(buf, string'(" Write Data: "));
 		write(buf, wdata);
-		write(buf, string'(" Write Endable: "));
+		write(buf, string'(" Write Enable: "));
 		write(buf, wen);
 		write(buf, string'(" Read Enable: "));
 		write(buf, ren);

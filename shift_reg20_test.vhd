@@ -11,17 +11,17 @@ end shift_reg20_test;
 
 architecture test of shift_reg20_test is
 
-component shift_reg20
-  port (
+component shift_reg20 
+	port (
 		reset	:  in std_logic;
 		clk		:  in std_logic;
-		q		:  out std_logic_vector(18 downto 0);
-		qbar	:  out std_logic_vector(18 downto 0));
+		q		:  out std_logic_vector(19 downto 0);
+		qbar	:  out std_logic_vector(19 downto 0));
 end component;
 
 for shift_reg20_temp : shift_reg20 use entity work.shift_reg20(structural);
 
-signal q, qbar : std_logic_vector(18 downto 0);
+signal q, qbar : std_logic_vector(19 downto 0);
 signal reset, clk : std_logic;
 	
 begin

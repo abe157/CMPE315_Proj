@@ -8,19 +8,19 @@ entity cache_byte is
     Write_data :  in std_logic_vector(7 downto 0);
     Write_en   :  in std_logic;
     Read_en    :  in std_logic;
-    --clk        :  in std_logic; clk for the dlatch acts will act as the write_en signal 
+    -- clk     :  in std_logic; clk for the dlatch will act as the write_en signal 
     Read_data  :  out std_logic_vector(7 downto 0));
 end cache_byte;
 
 architecture structural of cache_byte is
 
 	component cache_bit
- 		 port (
- 		Reset      :  in std_logic;
-    	Write_data :  in std_logic;
-    	Write_en   :  in std_logic;
-    	Read_en    :  in std_logic;
-    	Read_data  :  out std_logic);
+ 		port (
+	 		Reset      :  in std_logic;
+	    	Write_data :  in std_logic;
+	    	Write_en   :  in std_logic;
+	    	Read_en    :  in std_logic;
+	    	Read_data  :  out std_logic);
 	end component;
 
 	for cb_0, cb_1, cb_2, cb_3, cb_4, cb_5, cb_6, cb_7 : cache_bit use entity work.cache_bit(structural);

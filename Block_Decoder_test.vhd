@@ -40,7 +40,6 @@ begin
 
 	while not (endfile(infile)) loop
 
-	
 		readline(infile, buf);
 		read (buf, Input1);
 		offset <= Input1;
