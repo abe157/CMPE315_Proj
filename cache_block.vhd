@@ -86,6 +86,7 @@ architecture structural of cache_block is
 	signal blocks_en, wen, ren : std_logic_vector(3 downto 0);
 	signal cbo_0, cbo_1, cbo_2, cbo_3 : std_logic_vector(7 downto 0);
 	signal vt_wen, vt_ren : std_logic;
+	signal one : std_logic := '1';
 
 begin
 
@@ -104,7 +105,7 @@ begin
 	and_10: and2 port map(blocks_en(2), Write_en, wen(2));
 	and_11: and2 port map(blocks_en(3), Write_en, wen(3));
 
-	and_12: and2 port map(Block_Enable, Read_en, vt_ren);
+	and_12: and2 port map(Block_Enable, one, vt_ren);
 	and_13: and2 port map(Block_Enable, Write_en,vt_wen);
 
 

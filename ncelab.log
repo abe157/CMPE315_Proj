@@ -1,5 +1,5 @@
 ncelab: 15.20-s035: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncelab	15.20-s035: Started on Nov 21, 2017 at 07:06:19 EST
+TOOL:	ncelab	15.20-s035: Started on Nov 22, 2017 at 08:43:33 EST
 ncelab
     -messages
     -access rwc
@@ -9,11 +9,15 @@ ncelab
 
 ncelab: *W,ARCMRA: Elaborating the VHDL.CHIP_TEST:TEST, MRA (most recently analyzed) architecture.
 	Elaborating the design hierarchy:
+ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):sm@state_machine(structural):or10_2) with design unit (VHDL.OR10:STRUCTURAL).
+ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):out_mem@output_enable(structural):tx_2) with design unit (VHDL.TX:STRUCTURAL).
+ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):out_cpu@output_enable(structural):tx_2) with design unit (VHDL.TX:STRUCTURAL).
 	Building instance specific data structures.
 	Design hierarchy summary:
-		      Instances  Unique
-		Components:  96      12
-		Processes:   83      18
-		Signals:     77      41
+		              Instances  Unique
+		Components:        2878      51
+		Default bindings:     3       1
+		Processes:         2667     168
+		Signals:           2078     164
 	Writing initial simulation snapshot: VHDL.CHIP_TEST:TEST
-TOOL:	ncelab	15.20-s035: Exiting on Nov 21, 2017 at 07:06:19 EST  (total: 00:00:00)
+TOOL:	ncelab	15.20-s035: Exiting on Nov 22, 2017 at 08:43:34 EST  (total: 00:00:01)

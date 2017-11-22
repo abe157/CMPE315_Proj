@@ -13,7 +13,6 @@ end shift_reg;
 
 architecture structural of shift_reg is
 	
-
 	component latch			
 	  port (	
 		d   : in  std_logic;

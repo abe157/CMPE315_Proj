@@ -9,8 +9,8 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 entity mux is
   port (
-    A : in std_logic;
-    B : in std_logic;
+    a : in std_logic;
+    b : in std_logic;
     sel : in std_logic;
     output : out std_logic);
 end mux;
@@ -46,8 +46,8 @@ architecture structural of mux is
 begin
 
   in_0: inv port map(sel, Notsel);
-  and2_0: and2 port map (A, sel, temp0);
-  and2_1: and2 port map (B, Notsel, temp1);
+  and2_0: and2 port map (a, sel, temp0);
+  and2_1: and2 port map (b, Notsel, temp1);
   or2_0: or2 port map (temp0, temp1, output);
   
 end structural;

@@ -32,9 +32,9 @@ begin
 	inv_0 : inv port map(Byte_Offset(0), Byte_Offset_Bar(0));
 	inv_1 : inv port map(Byte_Offset(1), Byte_Offset_Bar(1));
 
-	and2_0  : and2 port map(Byte_Offset_Bar(0), Byte_Offset_Bar(1), Output(0));
-	and2_1  : and2 port map(Byte_Offset(0), Byte_Offset_Bar(1), Output(1));
-	and2_2  : and2 port map(Byte_Offset_Bar(0), Byte_Offset(1), Output(2));
-	and2_3  : and2 port map(Byte_Offset(0), Byte_Offset(1), Output(3));
+	and2_0  : and2 port map(Byte_Offset_Bar(0), Byte_Offset_Bar(1), Output(0));	-- 00
+	and2_1  : and2 port map(Byte_Offset(0), Byte_Offset_Bar(1), Output(1));		-- 01
+	and2_2  : and2 port map(Byte_Offset_Bar(0), Byte_Offset(1), Output(2));		-- 10
+	and2_3  : and2 port map(Byte_Offset(0), Byte_Offset(1), Output(3));			-- 11
 
 end structural;

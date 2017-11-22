@@ -1,0 +1,17 @@
+TOOL:	ncvhdl_cg	15.20-s035: Started on Nov 22, 2017 at 01:42:47 EST
+ncvhdl_cg
+    -NOCOPYRIGHT
+    -NOVITALACCL
+    -MESSAGES
+    -CDSLIB ./cds.lib
+    -HDLVAR ./hdl.var
+    -MESSAGES
+    -LINEDEBUG
+    -IMPLICIT vhdl
+    -XHANDOFF vhdl
+    -XHANDOFF vhdl
+    VHDL.NAND2:STRUCTURAL
+
+VHDL.NAND2:STRUCTURAL (architecture):
+	streams: 1, words: 99
+TOOL:	ncvhdl_cg	15.20-s035: Exiting on Nov 22, 2017 at 01:42:47 EST  (total: 00:00:00)

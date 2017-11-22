@@ -6,8 +6,8 @@ entity shift_reg20 is
 	port (
 		reset	:  in std_logic;
 		clk		:  in std_logic;
-		q		:  out std_logic_vector(18 downto 0);
-		qbar	:  out std_logic_vector(18 downto 0));
+		q		:  out std_logic_vector(19 downto 0);
+		qbar	:  out std_logic_vector(19 downto 0));
 end shift_reg20;
 
 architecture structural of shift_reg20 is
@@ -34,13 +34,13 @@ architecture structural of shift_reg20 is
 	end component;
 
 	for shift_reg_1, shift_reg_2, shift_reg_3, shift_reg_4, shift_reg_5, shift_reg_6, shift_reg_7, shift_reg_8, shift_reg_9, shift_reg_10, 
-		shift_reg_11, shift_reg_12, shift_reg_13, shift_reg_14, shift_reg_15, shift_reg_16, shift_reg_17, shift_reg_18, shift_reg_19	:  shift_reg use entity work.shift_reg(structural);
+		shift_reg_11, shift_reg_12, shift_reg_13, shift_reg_14, shift_reg_15, shift_reg_16, shift_reg_17, shift_reg_18, shift_reg_19, shift_reg_20	:  shift_reg use entity work.shift_reg(structural);
 	
 	for inv_1		:  inv use entity work.inv(structural);
 	for or2_1, or2_2		: or2 use entity work.or2(structural);
 	
-	signal temp		:  std_logic_vector(18 downto 0);
-	signal ntemp	:  std_logic_vector(18 downto 0);
+	signal temp		:  std_logic_vector(19 downto 0);
+	signal ntemp	:  std_logic_vector(19 downto 0);
 	signal nreset	:  std_logic;
 	signal zero     :  std_logic := '0';
 	signal one     :  std_logic := '1';
@@ -49,7 +49,7 @@ architecture structural of shift_reg20 is
 	begin
 		inv_1	:  inv port map(reset, nreset);
 		or2_1	:  or2 port map(reset, clk, resetclk);
-		or2_2	:	or2 port map(reset, temp(18), reg1D);
+		or2_2	:	or2 port map(reset, temp(19), reg1D);
 		
 
 		shift_reg_1	:  shift_reg port map (reg1D, clk, zero, temp(0), ntemp(0));
@@ -71,6 +71,7 @@ architecture structural of shift_reg20 is
 		shift_reg_17	:  shift_reg port map (temp(15), clk, reset, temp(16), ntemp(16));
 		shift_reg_18	:  shift_reg port map (temp(16), clk, reset, temp(17), ntemp(17));
 		shift_reg_19	:  shift_reg port map (temp(17), clk, reset, temp(18), ntemp(18));
+		shift_reg_20	:  shift_reg port map (temp(18), clk, reset, temp(19), ntemp(19));
 		q <= temp;
 		qbar <= ntemp;
 

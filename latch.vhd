@@ -14,7 +14,7 @@ architecture structural of latch is
 begin
   output: process                 
   begin                           
-    wait until ( clk'EVENT or clk = '0' ); 
+    wait until ( clk'EVENT and clk = '0' ); 
     q <= d;
     qbar <= not d ;
   end process output;      
