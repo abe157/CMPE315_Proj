@@ -1,5 +1,5 @@
 ncelab: 15.20-s035: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncelab	15.20-s035: Started on Nov 22, 2017 at 08:43:33 EST
+TOOL:	ncelab	15.20-s035: Started on Nov 22, 2017 at 20:39:51 EST
 ncelab
     -messages
     -access rwc
@@ -9,15 +9,87 @@ ncelab
 
 ncelab: *W,ARCMRA: Elaborating the VHDL.CHIP_TEST:TEST, MRA (most recently analyzed) architecture.
 	Elaborating the design hierarchy:
-ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):sm@state_machine(structural):or10_2) with design unit (VHDL.OR10:STRUCTURAL).
+ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):sm@state_machine(structural):or12_2) with design unit (VHDL.OR12:STRUCTURAL).
 ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):out_mem@output_enable(structural):tx_2) with design unit (VHDL.TX:STRUCTURAL).
 ncelab: *W,CUDEFB: default binding occurred for component instance (:chip_test(test):c1@chip(structural):out_cpu@output_enable(structural):tx_2) with design unit (VHDL.TX:STRUCTURAL).
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.AND2:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Wed Nov 22 10:37:04 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.INV:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.LATCH (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.OR2:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:57 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.LATCH:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.NAND2:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.NAND2 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.AND2 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Wed Nov 22 10:37:04 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.OR2 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:57 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.AND3 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.INV (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.NOR2 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:57 2017
+		expected: Tue Nov 21 21:34:22 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.AND3:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:58 2017
+		expected: Tue Nov 21 20:55:15 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.NOR2:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:58:57 2017
+		expected: Tue Nov 21 21:34:22 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.STATE2 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:37:38 2017
+		expected: Wed Nov 22 10:33:57 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file entity VHDL.STATE1 (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:37:34 2017
+		expected: Wed Nov 22 10:33:46 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.STATE1:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:37:34 2017
+		expected: Wed Nov 22 10:33:46 2017.
+ncvhdl_cg: *W,DLWNEW: Intermediate file architecture VHDL.STATE2:STRUCTURAL (AST)
+	is newer than expected by architecture VHDL.STATE_MACHINE:STRUCTURAL (AST)
+		actual:   Wed Nov 22 10:37:38 2017
+		expected: Wed Nov 22 10:33:57 2017.
 	Building instance specific data structures.
 	Design hierarchy summary:
 		              Instances  Unique
-		Components:        2878      51
+		Components:        2883      51
 		Default bindings:     3       1
-		Processes:         2667     168
-		Signals:           2078     164
+		Processes:         2672     168
+		Signals:           2081     167
 	Writing initial simulation snapshot: VHDL.CHIP_TEST:TEST
-TOOL:	ncelab	15.20-s035: Exiting on Nov 22, 2017 at 08:43:34 EST  (total: 00:00:01)
+TOOL:	ncelab	15.20-s035: Exiting on Nov 22, 2017 at 20:39:52 EST  (total: 00:00:01)

@@ -13,7 +13,6 @@ entity cache is
 	block_in : in std_logic_vector(2 downto 0);
 	byte_in	 : in std_logic_vector(1 downto 0);	
 	
-	
 	Output	: out std_logic_vector(7 downto 0);
 	Hit_Miss_Signal : out std_logic);
 end cache;
@@ -80,12 +79,10 @@ architecture structural of cache is
 			input1 :  in std_logic_vector(3 downto 0);
 			input2 :  in std_logic_vector(3 downto 0);
 			input3 :  in std_logic_vector(3 downto 0);
-			
 			input4 :  in std_logic_vector(3 downto 0);
 			input5 :  in std_logic_vector(3 downto 0);
 			input6 :  in std_logic_vector(3 downto 0);
 			input7 :  in std_logic_vector(3 downto 0);
-			
 			en     :  in std_logic_vector(7 downto 0);
 			output :  out std_logic_vector(3 downto 0)
 		);

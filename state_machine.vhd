@@ -68,8 +68,6 @@ begin
 	output <= input1 or input2 or input3 or input4 or input5 or input6 or input7 or input8 or input9 or input10 or input11 or input12 or input13 or input14 or input15 or input16 or input17 or input18 or input19 or input20 or input21;
 end structural;
 
-
-
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -143,7 +141,6 @@ architecture structural of state_machine is
 			state_en	: in std_logic;
 			reset		: in std_logic;
 			start		: in std_logic;
-			
 			
 			Reset_st	: out std_logic;
 			Next_st		: out std_logic;
@@ -481,7 +478,6 @@ architecture structural of state_machine is
 			output : out std_logic);
 	end component;
 	
-	
 	for st0 : state0 use entity work.state0(structural);
 	for st1	: state1 use entity work.state1(structural);
 	for st2 : state2 use entity work.state2(structural);
@@ -563,7 +559,6 @@ begin
 	or20_7	: or20 port map(temp_valid_data(0), temp_valid_data(1), temp_valid_data(2), temp_valid_data(3), temp_valid_data(4), temp_valid_data(5), temp_valid_data(6), temp_valid_data(7), temp_valid_data(8), temp_valid_data(9), temp_valid_data(10), temp_valid_data(11), temp_valid_data(12), temp_valid_data(13), temp_valid_data(14), temp_valid_data(15), temp_valid_data(16), temp_valid_data(17), temp_valid_data(18), temp_valid_data(19), Valid_Data);
 	or20_8	: or20 port map(temp_busy(0), temp_busy(1), temp_busy(2), temp_busy(3), temp_busy(4), temp_busy(5), temp_busy(6), temp_busy(7), temp_busy(8), temp_busy(9), temp_busy(10), temp_busy(11), temp_busy(12), temp_busy(13), temp_busy(14), temp_busy(15), temp_busy(16), temp_busy(17), temp_busy(18), temp_busy(19), Busy);	
 	
-
 	--Ma(7 downto 0) <= state(7 downto 0);	
 	Ma <= Ca;
 
@@ -574,5 +569,4 @@ begin
 	-- byte_out <= Ca(1 downto 0);
 	--Ca <= nstate(7 downto 0);
 	
-
 end structural;

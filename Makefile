@@ -1,13 +1,37 @@
 #Makefile for compiling vhdl code
 
-PARTS = or3.vhd or4.vhd and2.vhd and3.vhd or8.vhd xor2.vhd inv.vhd nand2.vhd or2.vhd mux.vhd mux8.vhd output_enable.vhd Dlatch.vhd latch.vhd tx.vhd reg8.vhd 
-PARTS += hit_miss.vhd cache_bit.vhd cache_byte.vhd valid_tag.vhd multiplex4_1.vhd Block_Decoder.vhd Byte_Decoder.vhd cache_block.vhd 
-PARTS += multiplex8_1.vhd hit_multiplex4_1.vhd shift_reg.vhd shift_reg20.vhd cache.vhd 
-#states code 
-PARTS += state0in.vhd state0out.vhd state_machine.vhd
+PARTS = xor2.vhd and2.vhd and3.vhd inv.vhd nand2.vhd nor2.vhd or2.vhd or3.vhd or4.vhd or8.vhd Dlatch.vhd latch.vhd tx.vhd
+# PARTS += hit_miss.vhd Byte_Decoder.vhd Block_Decoder.vhd
+# PARTS += valid_tag.vhd cache_bit.vhd cache_byte.vhd cache_block.vhd cache.vhd
+# PARTS += output_enable.vhd output_enable8.vhd
+# PARTS += mux.vhd mux8.vhd hit_multiplex4_1.vhd multiplex4_1_test.vhd multiplex4_1.vhd multiplex8_1.vhd
+# PARTS += reg.vhd reg8.vhd negDlatch.vhd
+# PARTS += shift_reg.vhd shift_reg20.vhd
+# PARTS += state0.vhd state1.vhd state2.vhd state3.vhd wait_state.vhd state10.vhd state11.vhd state12.vhd state13.vhd state14.vhd state15.vhd state16.vhd state17.vhd state18.vhd state19.vhd state_machine.vhd
+# PARTS += chip.vhd
 
-#Final part to be complied last
-PARTS +=  chip.vhd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #chip test is already included below
 #cache_block_test

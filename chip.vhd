@@ -1,15 +1,13 @@
 --
 --Entity: chip
 --Architecture: structural
--- Arthur: a157
-
+--Author: a157 and cm83935
 
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity chip is
-  
   port (
       cpu_add    : in  std_logic_vector(7 downto 0);
       cpu_data   : inout  std_logic_vector(7 downto 0);
@@ -26,7 +24,6 @@ entity chip is
 end chip;
 
 architecture structural of chip is
-
 
 component output_enable
   port (
@@ -51,7 +48,6 @@ end component;
 	
 component state_machine
   port (
-
 		clk : in std_logic;
 		Read_Write : in std_logic;
 		Start : in std_logic;
@@ -81,7 +77,6 @@ component cache
 	Reset 	: in std_logic;
 	block_in : in std_logic_vector(2 downto 0);
 	byte_in	 : in std_logic_vector(1 downto 0);	
-	
 	
 	Output	: out std_logic_vector(7 downto 0);
 	Hit_Miss_Signal : out std_logic);

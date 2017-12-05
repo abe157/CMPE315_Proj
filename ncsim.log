@@ -5,7 +5,7 @@ Relinquished control to SimVision...
 ncsim> 
 ncsim> database -open waves -into waves.shm -default
 Created default SHM database waves
-ncsim> probe -create -shm :cpu_data :busy :clk :clk_count :clock :cpu_add :cpu_rd_wrn :Gnd :mem_add :mem_data :mem_en :reset :start :Vdd
+ncsim> probe -create -shm :cpu_add :busy :clk :clk_count :cpu_data :cpu_rd_wrn :Gnd :mem_add :mem_data :mem_en :reset :start
 Created probe 1
 ncsim> run 370000000
  Clock: 0 Start: U Cpu Read/Write: U Reset: U
@@ -401,31 +401,31 @@ ncsim> run 370000000
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 28 Start: 0 Cpu Read/Write: Z Reset: 0
- CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
+ CPU address: ZZZZZZZZ CPU data: 11111111
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 1
- Memory  Address: 00000011
+ Busy: 0 Memory  Enable: 0
+ Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 28 Start: 0 Cpu Read/Write: Z Reset: 0
- CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
+ CPU address: ZZZZZZZZ CPU data: 11111111
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 1
- Memory  Address: 00000011
+ Busy: 0 Memory  Enable: 0
+ Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 29 Start: 0 Cpu Read/Write: Z Reset: 0
  CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 0
+ Busy: 0 Memory  Enable: 0
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 29 Start: 1 Cpu Read/Write: 0 Reset: 0
  CPU address: 11111111 CPU data: 10101010
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 0
+ Busy: 0 Memory  Enable: 0
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 30 Start: 1 Cpu Read/Write: 0 Reset: 0
@@ -460,28 +460,28 @@ ncsim> run 370000000
  CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 0
+ Busy: 0 Memory  Enable: 0
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 32 Start: 0 Cpu Read/Write: Z Reset: 0
  CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 0
+ Busy: 0 Memory  Enable: 0
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 33 Start: 0 Cpu Read/Write: Z Reset: 0
  CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 0
+ Busy: 0 Memory  Enable: 0
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 33 Start: 0 Cpu Read/Write: Z Reset: 0
  CPU address: ZZZZZZZZ CPU data: ZZZZZZZZ
  Memory data: ZZZZZZZZ
 
- Busy: 1 Memory  Enable: 0
+ Busy: 0 Memory  Enable: 0
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
  Clock: 34 Start: 0 Cpu Read/Write: Z Reset: 0
@@ -499,4 +499,7 @@ ncsim> run 370000000
  Memory  Address: ZZZZZZZZ
  ----------------------------------------------
 Ran until 370 NS + 0
-ncsim> 
+ncsim> run 370000000
+Ran until 740 NS + 0
+ncsim> ^C
+ncsim> exit
