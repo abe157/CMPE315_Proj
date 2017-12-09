@@ -1,6 +1,7 @@
 #Makefile for compiling vhdl code
 
-PARTS = xor2.vhd and2.vhd and3.vhd inv.vhd nand2.vhd nor2.vhd or2.vhd or3.vhd or4.vhd or8.vhd Dlatch.vhd latch.vhd tx.vhd
+PARTS = xor2.vhd and2.vhd inv.vhd nand2.vhd nor2.vhd or2.vhd 
+PARTS += and3.vhd or3.vhd or4.vhd or8.vhd Dlatch.vhd latch.vhd tx.vhd
 PARTS += hit_miss.vhd Byte_Decoder.vhd Block_Decoder.vhd
 PARTS += mux.vhd mux8.vhd hit_multiplex4_1.vhd multiplex4_1_test.vhd multiplex4_1.vhd multiplex8_1.vhd
 PARTS += valid_tag.vhd cache_bit.vhd cache_byte.vhd cache_block.vhd cache.vhd
